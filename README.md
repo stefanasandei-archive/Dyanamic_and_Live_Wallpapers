@@ -6,8 +6,10 @@ To set a dynamic wallpaper -> `$ dynamic wallpaper_name`, this will change by th
 
 To set a live wallpaper -> `$ live wallpaper_name`, live wallpaper (like on mobile)
 
+![Showcase](https://media.giphy.com/media/SsZlWuMc36zc70AaVF/giphy.gif)
+
 # Availabel wallpapapers
 There are two sets of wallpapaers: `earth` (default one) and `city`
 
 # Credits
-Sources for photos: Dynamic Wallpaper Club(https://www.dynamicwallpaper.club/) and Dynwalls(http://dynwalls.com/)
+Sources for photos: [Dynamic Wallpaper Club](https://www.dynamicwallpaper.club/) and [Dynwalls](http://dynwalls.com/)
