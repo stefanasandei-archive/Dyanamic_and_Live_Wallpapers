@@ -13,6 +13,11 @@ int hour, init_hour;
 
 int main(int argc, char *argv[]) 
 {   
+    ShowWindow(GetConsoleWindow(), SW_HIDE);
+    #if DEBUG
+    ShowWindow(GetConsoleWindow(), SW_SHOW);
+    #endif
+
     if(argv[1]) strcpy(argument, argv[1]);
     else strcpy(argument, "earth");
 
@@ -50,36 +55,39 @@ int main(int argc, char *argv[])
     }
   return EXIT_SUCCESS;
 }
+int getIntex(int hour) {
+    switch(hour) {
+        case 1:  return 1; 
+        case 2: return 1;  
+        case 3: return 2; 
+        case 4: index = 3;return 3; 
+        case 5: index = 3; return 3; 
+        case 6: index = 4; return 4; 
+        case 7: index = 5; return 5; 
+        case 8: index = 6; return 6; 
+        case 9: index = 6; return 6; 
+        case 10: index = 7; return 7; 
+        case 11: index = 7; return 7; 
+        case 12: index = 8; return 8; 
+        case 13: index = 8; return 8; 
+        case 14: index = 9; return 9; 
+        case 15: index = 10; return 10; 
+        case 16: index = 10; return 10; 
+        case 17: index = 11; return 11; 
+        case 18: index = 12; return 12; 
+        case 19: index = 13; return 13; 
+        case 20: index = 14; return 14; 
+        case 21: index = 15; return 15; 
+        case 22: index = 15; return 16; 
+        case 23: index = 16; return 16; 
+        case 24: index = 16; return 16; 
+    }
+}
 int setBackground(char *wallpaperName, int hour) {
     char* wallpaperIndex[1001] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"};
     int index = 0;
 
-    switch(hour) {
-        case 1: index = 1; break;
-        case 2: index = 1; break;
-        case 3: index = 2; break;
-        case 4: index = 3; break;
-        case 5: index = 3; break;
-        case 6: index = 4; break;
-        case 7: index = 5; break;
-        case 8: index = 6; break;
-        case 9: index = 6; break;
-        case 10: index = 7; break;
-        case 11: index = 7; break;
-        case 12: index = 8; break;
-        case 13: index = 8; break;
-        case 14: index = 9; break;
-        case 15: index = 10; break;
-        case 16: index = 10; break;
-        case 17: index = 11; break;
-        case 18: index = 12; break;
-        case 19: index = 13; break;
-        case 20: index = 14; break;
-        case 21: index = 15; break;
-        case 22: index = 15; break;
-        case 23: index = 16; break;
-        case 24: index = 16; break;
-    }
+    index = getIndex(hour);
     
     strcat(filePath, strLocalDirectory);
     strcat(filePath,wallpaperName);

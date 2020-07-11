@@ -13,26 +13,11 @@ char filePath[101];
 char argument[101];
 int hour, init_hour; 
 
-void HideConsole()
-{
-    ShowWindow(GetConsoleWindow(), SW_HIDE);
-}
-
-void ShowConsole()
-{
-    ShowWindow(GetConsoleWindow(), SW_SHOW);
-}
-
-boolean IsConsoleVisible()
-{
-    return IsWindowVisible(GetConsoleWindow()) != FALSE;
-}
-
 int main(int argc, char *argv[]) 
 {   
-    HideConsole();
+    ShowWindow(GetConsoleWindow(), SW_HIDE);
     #if DEBUG
-    ShowConsole();
+    ShowWindow(GetConsoleWindow(), SW_SHOW);
     #endif
 
     if(argv[1]) 
